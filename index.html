@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Desk Training Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>🎓 Service Desk Training Dashboard</h1>
+            <p class="header-subtitle">Empowering Excellence Through Comprehensive Training</p>
+        </header>
+
+        <main class="dashboard">
+            <!-- Training Overview Section -->
+            <section class="section overview-section">
+                <h2>📋 Training Overview</h2>
+                <div class="overview-content">
+                    <div class="overview-text">
+                        <h3>Our Training Mission</h3>
+                        <p>We are committed to developing world-class service desk professionals through comprehensive, hands-on training programs that emphasize technical excellence, customer service, and continuous improvement.</p>
+                        
+                        <h4>Training Approach</h4>
+                        <ul>
+                            <li>Interactive workshops and hands-on labs</li>
+                            <li>Mentorship programs with experienced staff</li>
+                            <li>Real-world scenario-based learning</li>
+                            <li>Continuous assessment and feedback</li>
+                        </ul>
+                        
+                        <h4>Available Resources</h4>
+                        <ul>
+                            <li>Online learning platform with 50+ modules</li>
+                            <li>Virtual lab environment for practice</li>
+                            <li>Knowledge base with 1000+ articles</li>
+                            <li>24/7 trainer support via Slack</li>
+                        </ul>
+                    </div>
+                    <div class="quick-stats">
+                        <div class="stat-card">
+                            <span class="stat-number">127</span>
+                            <span class="stat-label">Active Trainees</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-number">15</span>
+                            <span class="stat-label">Training Modules</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-number">8</span>
+                            <span class="stat-label">Expert Trainers</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Training Schedule Section -->
+            <section class="section schedule-section">
+                <h2>📅 Weekly Training Schedule</h2>
+                <div class="schedule-controls">
+                    <button class="btn-secondary" onclick="previousWeek()">← Previous Week</button>
+                    <span class="current-week">Week of January 15-19, 2024</span>
+                    <button class="btn-secondary" onclick="nextWeek()">Next Week →</button>
+                </div>
+                <div class="schedule-grid">
+                    <div class="schedule-header">
+                        <div class="time-slot">Time</div>
+                        <div class="day-header">Monday</div>
+                        <div class="day-header">Tuesday</div>
+                        <div class="day-header">Wednesday</div>
+                        <div class="day-header">Thursday</div>
+                        <div class="day-header">Friday</div>
+                    </div>
+                    <div class="schedule-body" id="scheduleBody">
+                        <!-- Schedule content will be populated by JavaScript -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Training Efficiency Metrics Section -->
+            <section class="section metrics-section">
+                <h2>📊 Training Efficiency Metrics</h2>
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-icon">⏱️</div>
+                        <div class="metric-content">
+                            <h3>Average Time to Competency</h3>
+                            <div class="metric-value">
+                                <span class="metric-number">28</span>
+                                <span class="metric-unit">days</span>
+                            </div>
+                            <div class="metric-trend positive">↑ 15% improvement</div>
+                        </div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-icon">✅</div>
+                        <div class="metric-content">
+                            <h3>Training Completion Rate</h3>
+                            <div class="metric-value">
+                                <span class="metric-number">94</span>
+                                <span class="metric-unit">%</span>
+                            </div>
+                            <div class="metric-trend positive">↑ 8% this quarter</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 94%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-icon">⭐</div>
+                        <div class="metric-content">
+                            <h3>Trainee Feedback Score</h3>
+                            <div class="metric-value">
+                                <span class="metric-number">4.7</span>
+                                <span class="metric-unit">/ 5</span>
+                            </div>
+                            <div class="metric-trend positive">↑ 0.3 improvement</div>
+                            <div class="star-rating">
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                                <span class="star half">★</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Training Calendar Section -->
+            <section class="section calendar-section">
+                <h2>🗓️ Training Calendar</h2>
+                <div class="calendar-controls">
+                    <button class="btn-secondary" onclick="previousMonth()">← Previous</button>
+                    <span class="current-month" id="currentMonth">January 2024</span>
+                    <button class="btn-secondary" onclick="nextMonth()">Next →</button>
+                </div>
+                <div class="calendar-grid" id="calendarGrid">
+                    <!-- Calendar will be populated by JavaScript -->
+                </div>
+            </section>
+
+            <!-- Suggested Improvements Section -->
+            <section class="section improvements-section">
+                <h2>💡 Suggested Improvements</h2>
+                <div class="improvements-grid">
+                    <div class="improvement-card">
+                        <div class="improvement-header">
+                            <h3>Implement Microlearning Modules</h3>
+                            <span class="priority-badge high">High Priority</span>
+                        </div>
+                        <p>Break down complex topics into 5-10 minute bite-sized lessons to improve retention and engagement.</p>
+                        <div class="improvement-actions">
+                            <button class="vote-btn" onclick="voteImprovement(1)">
+                                <span class="vote-icon">👍</span>
+                                <span class="vote-count">23</span>
+                            </button>
+                            <span class="improvement-status">Under Review</span>
+                        </div>
+                    </div>
+                    
+                    <div class="improvement-card">
+                        <div class="improvement-header">
+                            <h3>Gamify Training Process</h3>
+                            <span class="priority-badge medium">Medium Priority</span>
+                        </div>
+                        <p>Add points, badges, and leaderboards to make training more engaging and motivate completion.</p>
+                        <div class="improvement-actions">
+                            <button class="vote-btn" onclick="voteImprovement(2)">
+                                <span class="vote-icon">👍</span>
+                                <span class="vote-count">18</span>
+                            </button>
+                            <span class="improvement-status">Planning</span>
+                        </div>
+                    </div>
+                    
+                    <div class="improvement-card">
+                        <div class="improvement-header">
+                            <h3>AI-Powered Skill Assessments</h3>
+                            <span class="priority-badge medium">Medium Priority</span>
+                        </div>
+                        <p>Use AI to create personalized assessments that adapt to individual learning progress and identify knowledge gaps.</p>
+                        <div class="improvement-actions">
+                            <button class="vote-btn" onclick="voteImprovement(3)">
+                                <span class="vote-icon">👍</span>
+                                <span class="vote-count">15</span>
+                            </button>
+                            <span class="improvement-status">Research</span>
+                        </div>
+                    </div>
+                    
+                    <div class="improvement-card">
+                        <div class="improvement-header">
+                            <h3>Virtual Reality Training Labs</h3>
+                            <span class="priority-badge low">Low Priority</span>
+                        </div>
+                        <p>Create immersive VR environments for practicing complex scenarios without real-world consequences.</p>
+                        <div class="improvement-actions">
+                            <button class="vote-btn" onclick="voteImprovement(4)">
+                                <span class="vote-icon">👍</span>
+                                <span class="vote-count">7</span>
+                            </button>
+                            <span class="improvement-status">Future</span>
+                        </div>
+                    </div>
+                    
+                    <div class="improvement-card add-new">
+                        <div class="add-new-content">
+                            <div class="add-icon">+</div>
+                            <h3>Suggest New Improvement</h3>
+                            <p>Have an idea to enhance our training program?</p>
+                            <button class="btn-primary" onclick="showAddSuggestionModal()">Add Suggestion</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Modal for adding new suggestions -->
+    <div class="modal" id="suggestionModal">
+        <div class="modal-content">
+            <span class="close" onclick="closeAddSuggestionModal()">&times;</span>
+            <h2>Suggest New Improvement</h2>
+            <form id="suggestionForm">
+                <div class="form-group">
+                    <label for="suggestionTitle">Title:</label>
+                    <input type="text" id="suggestionTitle" name="title" required>
+                </div>
+                <div class="form-group">
+                    <label for="suggestionDescription">Description:</label>
+                    <textarea id="suggestionDescription" name="description" rows="4" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="suggestionPriority">Priority:</label>
+                    <select id="suggestionPriority" name="priority">
+                        <option value="low">Low Priority</option>
+                        <option value="medium">Medium Priority</option>
+                        <option value="high">High Priority</option>
+                    </select>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn-secondary" onclick="closeAddSuggestionModal()">Cancel</button>
+                    <button type="submit" class="btn-primary">Submit Suggestion</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
